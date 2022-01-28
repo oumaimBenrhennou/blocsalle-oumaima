@@ -1,0 +1,46 @@
+<h3 class="text-center" style="margin-bottom: 20px; "> La Liste des Salles</h3>
+
+<table class="table table-striped text-center">
+  <thead class="">
+    <tr>
+      <th>Nom</th>
+      <!-- <th>Capacité</th>-->
+      <th>Bloc</th>
+
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each list}}
+      <tr>
+        <td>{{this.name}}</td>
+        <!--  <td>{{this.capacite}}</td>-->
+        <td>{{this.blocName}}</td>
+
+        <td>
+          <a
+            class="btn btn-outline-dark btn-sm"
+            href="/salle/{{this._id}}"
+          >Modifier</a>
+          <a
+            class="btn btn-outline-dark btn-sm"
+            href="/salle/delete/{{this._id}}"
+            onclick="return confirm('Are you sure to delete this record ?');"
+          >Supprimer</a>
+          <a
+            class="btn btn-outline-dark btn-sm"
+            href="/salle/planing/{{this._id}}"
+          >Occupation de la salle</a>
+          <a class="btn btn-info btn-sm" href="/salle/salleqr/{{this._id}}">Qr
+            Code</a>
+
+        </td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
+<h3><a class="btn btn-outline-dark align-center btn-block" href="/salle"><i
+      class="fa fa-plus"
+    ></i>
+    Ajouter une Salle</a></h3>
+<!--<a class="btn btn-outline-dark btn-block"  href="/bloc/list"><i class="fa fa-list-alt"></i> La Liste des Blocs</a> -->

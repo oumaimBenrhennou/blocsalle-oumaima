@@ -1,0 +1,24 @@
+<h3 class="text-center" style="margin-bottom: 20px; ">
+  Occupation de la salle</h3>
+<table class="table table-striped text-center">
+  <thead class="">
+    <tr>
+      <th>NomSalle</th>
+      <th>date</th>
+      <th>creneau horraire</th>
+      <th>QR Code</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each blocs}}
+      <form action="/salle/planing/{{this.salle}}/{{this._id}}" method="get">
+        <tr>
+          <td>{{this.namesalle}}</td>
+          <td>{{this.date}}</td>
+          <td>{{this.crenauhr}}</td>
+          <td><button type="submit" class="btn btn-info">Get Code</button></td>
+        </tr>
+      </form>
+    {{/each}}
+  </tbody>
+</table>
